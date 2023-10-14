@@ -17,7 +17,7 @@
     max-width: 800px;
 
     & > hr {
-      border-bottom: 1px dashed var(--primary);
+      border-bottom: 1px dashed var(--color-text);
       margin: 1.5rem 0 0;
     }
   }
@@ -40,7 +40,7 @@
   }
 
   h1 {
-    color: var(--primary);
+    color: var(--primary-light);
     font-size: 2rem;
     line-height: 2.75rem;
   }
