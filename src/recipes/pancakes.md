@@ -26,8 +26,8 @@ course: breakfast
 
 1. In a large mixing bowl combine the salt, baking soda, citric acid (or lemon juice), and carbonated water.
 
-> **Helpful tip**: If you don't have carbonated water on hand, you can dissolve the baking soda
-> and citric acid 50 ml of refular water and then add 50 ml of milk instead.
+   > **Helpful tip**: If you don't have carbonated water on hand, you can dissolve the baking soda
+   > and citric acid 50 ml of refular water and then add 50 ml of milk instead.
 
 2. Add the sugar, one-third of the flour, and a bit of milk to the mixture.
    Begin stirring until you achieve a smooth, uniform consistency.
