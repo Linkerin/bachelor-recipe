@@ -1,7 +1,9 @@
 ---
 title: Lemon Posset
-date: 12/10/2023
+date: 10/12/2023
 time: 20 min
+serving: 4 persons
+course: dessert
 ---
 
 ## Ingredients
@@ -29,4 +31,4 @@ time: 20 min
 7. Allow the posset to cool to room temperature. Once it has reached room temperature,
    place the serving dishes in the refrigerator for a minimum of 4 hours.
 
-When serving, you can garnish with a touch of fresh berries. Enjoy!
+When serving, you can garnish with a touch of fresh berries.

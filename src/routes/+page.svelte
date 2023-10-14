@@ -8,7 +8,7 @@
       <a href={recipe.path}>
         {recipe.meta.title}
       </a>
-      Published {recipe.meta.date}
+      Published: {new Date(recipe.meta.date).toLocaleDateString()}
     </li>
   {/each}
 </ul>
@@ -20,7 +20,7 @@
   }
 
   li {
-    font-size: 0.9rem;
+    font-size: 0.875rem;
   }
 
   li > a {
