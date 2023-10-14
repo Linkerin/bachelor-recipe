@@ -15,7 +15,13 @@
     min-width: 40dvw;
     width: 100%;
     max-width: 800px;
+
+    & > hr {
+      border-bottom: 1px dashed var(--primary);
+      margin: 1.5rem 0 0;
+    }
   }
+
   p {
     font-size: 1rem;
     line-height: 1.5rem;

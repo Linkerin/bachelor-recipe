@@ -6,6 +6,8 @@ serving: 4 persons
 course: lunch / dinner
 ---
 
+---
+
 ## Ingredients
 
 - 150 grams of coarsely ground cornmeal
@@ -15,6 +17,8 @@ course: lunch / dinner
 - 35 grams of grated cheddar cheese
 - 15 grams of grated parmesan cheese
 - Salt, to taste
+
+---
 
 ## Cooking
 

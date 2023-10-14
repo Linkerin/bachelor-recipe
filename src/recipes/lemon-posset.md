@@ -6,11 +6,15 @@ serving: 4 persons
 course: dessert
 ---
 
+---
+
 ## Ingredients
 
 - 90 grams of sugar
 - 500 ml of heavy cream (22% fat)
 - 2 medium-size lemons
+
+---
 
 ## Cooking
 

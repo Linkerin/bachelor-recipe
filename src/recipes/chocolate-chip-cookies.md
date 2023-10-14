@@ -6,6 +6,8 @@ serving: ~22 cookies
 course: dessert
 ---
 
+---
+
 ## Ingredients
 
 - 225 grams of butter
@@ -16,6 +18,8 @@ course: dessert
 - 1 1/2 teaspoons of baking soda
 - 3/4 teaspoon of salt
 - 160 grams of chocolate, chopped or in chips
+
+---
 
 ## Cooking
 
