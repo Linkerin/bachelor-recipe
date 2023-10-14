@@ -1,11 +1,12 @@
 <script lang="ts">
-  export let data;
   import {
     IconAlarm,
     IconChefHat,
     IconToolsKitchen2 as IconMeal,
     IconUsers as IconPersons
   } from '@tabler/icons-svelte';
+
+  export let data;
 </script>
 
 <article>
@@ -26,7 +27,7 @@
     </div>
   </div>
   <svelte:component this={data.content} />
-  <p>Enjoy! <IconChefHat class="chef-icon" /></p>
+  <b>Enjoy! <IconChefHat class="chef-icon" /></b>
 </article>
 
 <style>
@@ -58,7 +59,19 @@
     border-right: 1px dashed var(--color-text);
   }
 
-  p :global(.chef-icon) {
+  @media (max-width: 360px) {
+    .features__item {
+      font-size: 0.875rem;
+      padding: 0.75rem 1rem;
+    }
+  }
+
+  b {
+    display: block;
+    margin-block: 0.75rem;
+  }
+
+  b > :global(.chef-icon) {
     height: 1em;
     width: 1em;
     vertical-align: -8%;
