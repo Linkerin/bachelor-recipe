@@ -3,7 +3,8 @@ title: Oatmeal Porridge
 date: 10/14/2023
 time: 35 min
 serving: 1 person
-course: breakfast
+course: ['breakfast']
+image: oatmeal-porridge.webp
 ---
 
 ---
@@ -23,7 +24,7 @@ course: breakfast
 
 2. Place the saucepan over high heat and bring the milk to a gentle boil.
 
-   > Be careful, the milk can boil over quickly!
+   > **Be careful**, the milk can boil over quickly!
 
 3. Once the milk starts to simmer and rise, reduce the heat to medium
    and continuously stir to prevent any spillover.

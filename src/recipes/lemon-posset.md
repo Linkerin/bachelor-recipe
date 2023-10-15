@@ -3,7 +3,7 @@ title: Lemon Posset
 date: 10/12/2023
 time: 20 min
 serving: 4 persons
-course: dessert
+course: ['dessert']
 ---
 
 ---

@@ -7,25 +7,34 @@
   } from '@tabler/icons-svelte';
 
   export let data;
+
+  const courses = data.course.join(', ');
 </script>
 
 <article>
   <h1>{data.title}</h1>
   <p class="text-sm">Published: {new Date(data.date).toLocaleDateString()}</p>
-  <div class="features">
-    <div class="features__item">
-      <IconAlarm size={30} />
-      {data.time}
+  <section>
+    {#if data.image}
+      <div class="img-container">
+        <img src={`/images/${data.image}`} alt={`${data.title}`} />
+      </div>
+    {/if}
+    <div class="features">
+      <div class="features__item">
+        <IconAlarm size={30} />
+        {data.time}
+      </div>
+      <div class="features__item">
+        <IconPersons size={30} />
+        {data.serving}
+      </div>
+      <div class="features__item">
+        <IconMeal size={30} />
+        {courses}
+      </div>
     </div>
-    <div class="features__item">
-      <IconPersons size={30} />
-      {data.serving}
-    </div>
-    <div class="features__item">
-      <IconMeal size={30} />
-      {data.course}
-    </div>
-  </div>
+  </section>
   <svelte:component this={data.content} />
   <b>Enjoy! <IconChefHat class="chef-icon" /></b>
 </article>
@@ -35,13 +44,21 @@
     margin-bottom: 0rem;
   }
 
+  section {
+    display: flex;
+    gap: 1.5rem;
+    margin-top: 1rem;
+    flex-wrap: wrap;
+  }
+
   .features {
     display: flex;
     align-items: center;
     justify-content: space-evenly;
     border: 1px solid var(--color-text);
-    border-radius: 1rem;
+    border-radius: 0.5rem;
     width: fit-content;
+    height: fit-content;
   }
 
   .features__item {
@@ -64,6 +81,18 @@
       font-size: 0.875rem;
       padding: 0.75rem 1rem;
     }
+  }
+
+  .img-container {
+    height: fit-content;
+    width: fit-content;
+    border: 2px solid var(--primary);
+    padding: 0.5rem;
+  }
+
+  img {
+    aspect-ratio: 1 / 1;
+    width: min(14rem, 70vw);
   }
 
   b {

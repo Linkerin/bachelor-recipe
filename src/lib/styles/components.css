@@ -15,6 +15,7 @@
     min-width: 40dvw;
     width: 100%;
     max-width: 800px;
+    margin-inline: auto;
 
     & > hr {
       border-bottom: 1px dashed var(--color-text);

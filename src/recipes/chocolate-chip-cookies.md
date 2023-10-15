@@ -3,7 +3,8 @@ title: Chocolate Chip Cookies
 date: 10/14/2023
 time: 1 h 45 min
 serving: ~22 cookies
-course: dessert
+course: ['dessert']
+image: chocolate-cookies.webp
 ---
 
 ---

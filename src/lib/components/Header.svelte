@@ -16,6 +16,7 @@
     margin-bottom: 1rem;
     padding-inline: 1rem;
     width: 100%;
+    z-index: 10;
   }
 
   a {
