@@ -1,5 +1,5 @@
 <header>
-  <a href="/" aria-label="Home page">The Bachelor Recipe</a>
+  <a href="/" aria-label="To The Bachelor Recipe homepage">The Bachelor Recipe</a>
 </header>
 
 <style>

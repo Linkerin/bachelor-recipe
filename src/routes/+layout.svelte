@@ -9,6 +9,12 @@
   export let data;
 </script>
 
+<svelte:head>
+  <title>The Bachelor Recipe</title>
+  <meta name="description" content="Simple cooking recipes that will make you a chef" />
+  <meta name="robots" content="index,follow" />
+</svelte:head>
+
 <Header />
 <main>
   <Aside menuItems={data.recipes} />
