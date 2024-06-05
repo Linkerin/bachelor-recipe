@@ -1,11 +1,12 @@
 <script lang="ts">
+  import Chip from '$lib/components/Chip.svelte';
   import { getImgUrl } from '$lib/utils/index.js';
   import type { PageData } from './$types.js';
 
   export let data: PageData;
 </script>
 
-<div id="recipe-cards">
+<div id="cards-container">
   {#each data.recipes as recipe}
     <section>
       <img src={getImgUrl(recipe.meta.image ?? 'default')} alt={`${recipe.meta.title}`} />
@@ -14,7 +15,7 @@
       </a>
       <div class="tags-container">
         {#each recipe.meta.course as course}
-          <div class="course-tag">{course}</div>
+          <Chip text={course} />
         {/each}
       </div>
       <p class="text-sm">
@@ -25,7 +26,7 @@
 </div>
 
 <style>
-  #recipe-cards {
+  #cards-container {
     display: flex;
     gap: 1.5rem;
     align-items: stretch;
@@ -67,16 +68,5 @@
     display: flex;
     align-items: center;
     gap: 0.25rem;
-  }
-
-  .course-tag {
-    border: 1px solid var(--color-text);
-    border-radius: 8px;
-    cursor: default;
-    font-size: 0.75rem;
-    line-height: 1rem;
-    margin-block: 0.25rem;
-    padding: 0.25rem 0.5rem;
-    width: fit-content;
   }
 </style>
