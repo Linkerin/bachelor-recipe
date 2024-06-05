@@ -2,11 +2,12 @@
   import Aside from '$lib/components/Aside.svelte';
   import Header from '$lib/components/Header.svelte';
   import Footer from '$lib/components/Footer.svelte';
+  import type { LayoutData } from './$types';
 
   import '$lib/styles/base.css';
   import '$lib/styles/components.css';
 
-  export let data;
+  export let data: LayoutData;
 </script>
 
 <svelte:head>
@@ -17,7 +18,7 @@
 
 <Header />
 <main>
-  <Aside menuItems={data.recipes} />
+  <Aside menuItems={data.courses} />
   <slot />
 </main>
 <Footer />

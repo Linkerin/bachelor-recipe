@@ -1,16 +1,5 @@
-type RecipeFile = {
-  metadata: {
-    title: string;
-    date: string;
-    time: string;
-    serving: string;
-    course: Array<string>;
-    image: string;
-  };
-  default: {
-    render: () => void;
-  };
-};
+import { PUBLIC_CLOUDINARY_URL } from '$env/static/public';
+import type { RecipeFile } from '$lib/types';
 
 export async function fetchRecipes() {
   const allRecipeFiles = import.meta.glob('/src/recipes/*.md');
@@ -40,5 +29,19 @@ export async function fetchCourses() {
 
   const coursesSet = new Set(courses.flat());
 
-  return [...coursesSet];
+  return Array.from(coursesSet);
+}
+
+interface GetImgUrlOptions {
+  format?: 'auto' | 'webp' | 'png' | 'avif';
+  quality?: number | 'auto';
+  width?: number;
+}
+export function getImgUrl(
+  imgName: string,
+  options: GetImgUrlOptions = { format: 'auto', quality: 75, width: 512 }
+) {
+  const url = `${PUBLIC_CLOUDINARY_URL}/f_${options.format},q_${options.quality},w_${options.width}/v1/recipe/${imgName}`;
+
+  return url;
 }

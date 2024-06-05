@@ -4,7 +4,7 @@ date: 10/14/2023
 time: 1 h 45 min
 serving: ~22 cookies
 course: ['dessert']
-image: chocolate-cookies.webp
+image: chocolate-cookies
 ---
 
 ---

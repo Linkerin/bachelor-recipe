@@ -5,6 +5,7 @@
     IconToolsKitchen2 as IconMeal,
     IconUsers as IconPersons
   } from '@tabler/icons-svelte';
+  import { getImgUrl } from '$lib/utils/index.js';
 
   export let data;
 
@@ -17,7 +18,7 @@
   <section>
     {#if data.image}
       <div class="img-container">
-        <img src={`/images/${data.image}`} alt={`${data.title}`} />
+        <img src={getImgUrl(data.image)} alt={`${data.title}`} />
       </div>
     {/if}
     <div class="features">

@@ -2,15 +2,19 @@
   export let menuItems: Array<string>;
 </script>
 
-<ul>
-  {#each menuItems as item}
-    <li>
-      <a href={`#`}>
-        {item.at(0)?.toUpperCase() + item.slice(1)}
-      </a>
-    </li>
-  {/each}
-</ul>
+<aside>
+  <nav>
+    <ul>
+      {#each menuItems as item}
+        <li>
+          <a href={`#`}>
+            {item.at(0)?.toUpperCase() + item.slice(1)}
+          </a>
+        </li>
+      {/each}
+    </ul>
+  </nav>
+</aside>
 
 <style>
   ul {

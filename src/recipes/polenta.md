@@ -4,7 +4,7 @@ date: 10/13/2023
 time: 20 min
 serving: 4 persons
 course: ['lunch', 'dinner']
-image: polenta.webp
+image: polenta
 ---
 
 ---

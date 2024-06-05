@@ -4,7 +4,7 @@ date: 10/14/2023
 time: 50 min
 serving: ~9 pancakes
 course: ['breakfast']
-image: pancakes.webp
+image: pancakes
 ---
 
 ---
@@ -35,7 +35,7 @@ image: pancakes.webp
    Incorporate the remaining flour and milk gradually. It'll be easier to mix this way.
 
 3. Once you've blended in all the flour and milk, crack the egg into the batter and add the olive oil.
-   Stir until you have a thick, lump-free batter.  
+   Stir until you have a thick, lump-free batter.
    The resulting batter should be thick, not watery. If it easily drips off a spoon,
    add a bit more flour (20-30 grams) and mix thoroughly.
 

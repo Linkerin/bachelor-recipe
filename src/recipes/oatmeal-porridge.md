@@ -4,7 +4,7 @@ date: 10/14/2023
 time: 35 min
 serving: 1 person
 course: ['breakfast']
-image: oatmeal-porridge.webp
+image: oatmeal-porridge
 ---
 
 ---

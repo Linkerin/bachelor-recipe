@@ -1,11 +1,14 @@
 <script lang="ts">
-  export let data;
+  import { getImgUrl } from '$lib/utils/index.js';
+  import type { PageData } from './$types.js';
+
+  export let data: PageData;
 </script>
 
 <div id="recipe-cards">
   {#each data.recipes as recipe}
     <section>
-      <img src={`/images/${recipe.meta.image ?? 'default.webp'}`} alt={`${recipe.meta.title}`} />
+      <img src={getImgUrl(recipe.meta.image ?? 'default')} alt={`${recipe.meta.title}`} />
       <a href={recipe.path}>
         {recipe.meta.title}
       </a>

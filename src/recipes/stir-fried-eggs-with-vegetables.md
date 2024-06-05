@@ -4,7 +4,7 @@ date: 10/14/2023
 time: 30 min
 serving: 2 persons
 course: ['breakfast', 'lunch']
-image: stir-fried-eggs.webp
+image: stir-fried-eggs
 ---
 
 ---
