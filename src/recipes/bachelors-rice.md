@@ -4,6 +4,7 @@ date: 10/14/2023
 time: 50 min
 serving: 4 persons
 course: ['dinner']
+image: bachelors-rice
 ---
 
 ---
