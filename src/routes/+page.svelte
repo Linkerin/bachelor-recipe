@@ -8,8 +8,15 @@
 
 <div id="cards-container">
   {#each data.recipes as recipe}
+    {@const imgUrl = recipe.meta.image ?? 'default'}
     <section>
-      <img src={getImgUrl(recipe.meta.image ?? 'default')} alt={`${recipe.meta.title}`} />
+      <img
+        alt={`${recipe.meta.title}`}
+        srcset={`${getImgUrl(imgUrl, { width: 400 })}, ${getImgUrl(imgUrl, {
+          width: 640
+        })} 2x, ${getImgUrl(imgUrl, { width: 1024 })} 3x`}
+        src={getImgUrl(imgUrl)}
+      />
       <a href={`/recipes/${encodeURIComponent(recipe.path)}`}>
         {recipe.meta.title}
       </a>
@@ -39,7 +46,7 @@
     position: relative;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start;
     gap: 0.25rem;
     border: 2px solid var(--primary);
     padding: 1rem;

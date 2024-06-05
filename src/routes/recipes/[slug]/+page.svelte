@@ -18,7 +18,13 @@
   <section>
     {#if data.image}
       <div class="img-container">
-        <img src={getImgUrl(data.image)} alt={`${data.title}`} />
+        <img
+          alt={`${data.title}`}
+          srcset={`${getImgUrl(data.image, { width: 400 })}, ${getImgUrl(data.image, {
+            width: 640
+          })} 2x, ${getImgUrl(data.image, { width: 1024 })} 3x`}
+          src={getImgUrl(data.image)}
+        />
       </div>
     {/if}
     <div class="features">

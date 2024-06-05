@@ -37,11 +37,9 @@ interface GetImgUrlOptions {
   quality?: number | 'auto';
   width?: number;
 }
-export function getImgUrl(
-  imgName: string,
-  options: GetImgUrlOptions = { format: 'auto', quality: 75, width: 512 }
-) {
-  const url = `${PUBLIC_CLOUDINARY_URL}/f_${options.format},q_${options.quality},w_${options.width}/v1/recipe/${imgName}`;
+export function getImgUrl(imgName: string, options?: GetImgUrlOptions) {
+  const params = { format: 'auto', quality: 75, width: 512, ...options };
+  const url = `${PUBLIC_CLOUDINARY_URL}/f_${params.format},q_${params.quality},w_${params.width}/v1/recipe/${imgName}`;
 
   return url;
 }
