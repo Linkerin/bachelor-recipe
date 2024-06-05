@@ -1,5 +1,5 @@
-import type { PageServerLoad } from './$types';
 import { fetchRecipes } from '$lib/utils';
+import type { PageServerLoad } from './$types';
 
 export const load: PageServerLoad = async () => {
   const recipes = await fetchRecipes();

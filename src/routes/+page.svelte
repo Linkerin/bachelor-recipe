@@ -9,7 +9,7 @@
   {#each data.recipes as recipe}
     <section>
       <img src={getImgUrl(recipe.meta.image ?? 'default')} alt={`${recipe.meta.title}`} />
-      <a href={recipe.path}>
+      <a href={`/recipes/${encodeURIComponent(recipe.path)}`}>
         {recipe.meta.title}
       </a>
       <div class="tags-container">

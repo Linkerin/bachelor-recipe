@@ -2,12 +2,12 @@ import { PUBLIC_CLOUDINARY_URL } from '$env/static/public';
 import type { RecipeFile } from '$lib/types';
 
 export async function fetchRecipes() {
-  const allRecipeFiles = import.meta.glob('/src/recipes/*.md');
+  const allRecipeFiles = import.meta.glob('$recipes/*.md');
 
   const recipes = await Promise.all(
     Object.entries(allRecipeFiles).map(async ([path, resolver]) => {
       const { metadata } = (await resolver()) as RecipeFile;
-      const recipePath = path.slice(4, -3);
+      const recipePath = path.slice(13, -3);
 
       return { meta: metadata, path: recipePath };
     })
@@ -17,7 +17,7 @@ export async function fetchRecipes() {
 }
 
 export async function fetchCourses() {
-  const allRecipeFiles = import.meta.glob('/src/recipes/*.md');
+  const allRecipeFiles = import.meta.glob('$recipes/*.md');
   const courses = await Promise.all(
     // eslint-disable-next-line @typescript-eslint/no-unused-vars
     Object.entries(allRecipeFiles).map(async ([_, resolver]) => {
