@@ -1,8 +1,12 @@
 <script lang="ts">
+  import type { LayoutData } from './$types';
+
+  import { page } from '$app/stores';
+
   import Aside from '$lib/components/Aside.svelte';
   import Header from '$lib/components/Header.svelte';
+  import HeadMeta from '$lib/components/HeadMeta.svelte';
   import Footer from '$lib/components/Footer.svelte';
-  import type { LayoutData } from './$types';
 
   import '$lib/styles/base.css';
   import '$lib/styles/components.css';
@@ -10,11 +14,7 @@
   export let data: LayoutData;
 </script>
 
-<svelte:head>
-  <title>The Bachelor Recipe</title>
-  <meta name="description" content="Simple cooking recipes that will make you a chef" />
-  <meta name="robots" content="index,follow" />
-</svelte:head>
+<HeadMeta title={$page?.data?.pageMeta?.title} description={$page?.data?.pageMeta?.description} />
 
 <Header />
 <main>

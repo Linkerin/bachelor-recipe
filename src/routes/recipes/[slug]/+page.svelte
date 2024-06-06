@@ -5,9 +5,11 @@
     IconToolsKitchen2 as IconMeal,
     IconUsers as IconPersons
   } from '@tabler/icons-svelte';
+  import type { PageData } from './$types';
+
   import { getImgUrl } from '$lib/utils/index.js';
 
-  export let data;
+  export let data: PageData;
 
   const courses = data.course.join(', ');
 </script>

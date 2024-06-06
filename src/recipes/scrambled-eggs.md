@@ -4,6 +4,7 @@ date: 10/14/2023
 time: 15 min
 serving: 2 persons
 course: ['breakfast']
+image: scrambled-eggs
 ---
 
 ---
