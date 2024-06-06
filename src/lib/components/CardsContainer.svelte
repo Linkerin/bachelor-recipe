@@ -1,4 +1,5 @@
 <script lang="ts">
+  import { IconAlarm } from '@tabler/icons-svelte';
   import type { PageData } from '../../routes/$types';
 
   import Chip from './Chip.svelte';
@@ -26,9 +27,12 @@
           <Chip text={course} />
         {/each}
       </div>
-      <p class="text-sm">
-        Published: {new Date(recipe.meta.date).toLocaleDateString()}
-      </p>
+      <footer class="card-footer">
+        <p><IconAlarm /> {recipe.meta.time}</p>
+        <p class="text-sm">
+          Published: {new Date(recipe.meta.date).toLocaleDateString()}
+        </p>
+      </footer>
     </section>
   {/each}
 </div>
@@ -79,5 +83,16 @@
     display: flex;
     align-items: center;
     gap: 0.25rem;
+  }
+
+  footer {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    margin-block-start: 1rem;
+
+    & > p {
+      margin: 0;
+    }
   }
 </style>
