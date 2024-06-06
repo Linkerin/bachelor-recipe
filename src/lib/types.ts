@@ -5,9 +5,14 @@ export type RecipeFile = {
     time: string;
     serving: string;
     course: Array<string>;
-    image: string;
+    image?: string;
   };
   default: {
     render: () => void;
   };
+};
+
+export type PageMeta = {
+  title?: string;
+  description?: string;
 };

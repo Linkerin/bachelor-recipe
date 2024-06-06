@@ -1,6 +1,12 @@
 import { PUBLIC_CLOUDINARY_URL } from '$env/static/public';
 import type { RecipeFile } from '$lib/types';
 
+export function capitalize(str: string) {
+  if (!str) return str;
+
+  return str.at(0)?.toUpperCase() + str.slice(1);
+}
+
 export async function fetchRecipes(course?: string) {
   const allRecipeFiles = import.meta.glob('$recipes/*.md');
 

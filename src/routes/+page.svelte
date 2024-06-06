@@ -42,6 +42,7 @@
     max-width: 80vw;
     margin-inline: auto;
   }
+
   section {
     position: relative;
     display: flex;
@@ -52,6 +53,7 @@
     padding: 1rem;
     width: min(19rem, 80vw);
   }
+
   section a {
     display: block;
     font-family: 'Raleway', sans-serif;
