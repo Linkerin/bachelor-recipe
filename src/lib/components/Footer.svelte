@@ -29,7 +29,6 @@
     gap: 0.75rem;
     min-height: 4.25rem;
     height: fit-content;
-    margin-top: 1rem;
     padding: 1rem;
     width: 100%;
   }

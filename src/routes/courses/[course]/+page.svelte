@@ -1,81 +1,8 @@
 <script lang="ts">
-  import Chip from '$lib/components/Chip.svelte';
-  import { getImgUrl } from '$lib/utils/index.js';
+  import CardsContainer from '$lib/components/CardsContainer.svelte';
   import type { PageData } from './$types';
 
   export let data: PageData;
 </script>
 
-<div id="cards-container">
-  {#if data.recipes}
-    {#each data.recipes as recipe}
-      {@const imgUrl = recipe.meta.image ?? 'default'}
-      <section>
-        <img
-          alt={`${recipe.meta.title}`}
-          srcset={`${getImgUrl(imgUrl, { width: 400 })}, ${getImgUrl(imgUrl, {
-            width: 640
-          })} 2x, ${getImgUrl(imgUrl, { width: 1024 })} 3x`}
-          src={getImgUrl(imgUrl)}
-        />
-        <a href={`/recipes/${encodeURIComponent(recipe.path)}`}>
-          {recipe.meta.title}
-        </a>
-        <div class="tags-container">
-          {#each recipe.meta.course as course}
-            <Chip text={course} />
-          {/each}
-        </div>
-        <p class="text-sm">
-          Published: {new Date(recipe.meta.date).toLocaleDateString()}
-        </p>
-      </section>
-    {/each}
-  {/if}
-</div>
-
-<style>
-  #cards-container {
-    display: flex;
-    gap: 1.5rem;
-    align-items: stretch;
-    justify-content: center;
-    flex-wrap: wrap;
-    max-width: 80vw;
-    margin-inline: auto;
-  }
-  section {
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    gap: 0.25rem;
-    border: 2px solid var(--primary);
-    padding: 1rem;
-    width: min(19rem, 80vw);
-  }
-  section a {
-    display: block;
-    font-family: 'Raleway', sans-serif;
-    font-weight: 700;
-    font-size: 1.25rem;
-    line-height: 2rem;
-
-    &::after {
-      content: '';
-      position: absolute;
-      inset: 0;
-    }
-  }
-
-  section img {
-    aspect-ratio: 1 / 1;
-    margin-bottom: 0.5rem;
-  }
-
-  .tags-container {
-    display: flex;
-    align-items: center;
-    gap: 0.25rem;
-  }
-</style>
+<CardsContainer recipes={data.recipes} />
