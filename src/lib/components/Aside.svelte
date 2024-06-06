@@ -7,7 +7,7 @@
     <ul>
       {#each menuItems as item}
         <li>
-          <a href={`#`}>
+          <a aria-label={`To '${item}' dishes page`} href={`/courses/${item}`}>
             {item.at(0)?.toUpperCase() + item.slice(1)}
           </a>
         </li>

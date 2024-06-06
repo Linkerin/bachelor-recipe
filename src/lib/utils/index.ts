@@ -1,7 +1,7 @@
 import { PUBLIC_CLOUDINARY_URL } from '$env/static/public';
 import type { RecipeFile } from '$lib/types';
 
-export async function fetchRecipes() {
+export async function fetchRecipes(course?: string) {
   const allRecipeFiles = import.meta.glob('$recipes/*.md');
 
   const recipes = await Promise.all(
@@ -12,6 +12,10 @@ export async function fetchRecipes() {
       return { meta: metadata, path: recipePath };
     })
   );
+
+  if (course) {
+    return recipes.filter((recipe) => recipe.meta.course.includes(course));
+  }
 
   return recipes;
 }
