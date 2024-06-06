@@ -1,6 +1,5 @@
 <script lang="ts">
   import type { LayoutData } from './$types';
-
   import { page } from '$app/stores';
 
   import Aside from '$lib/components/Aside.svelte';
@@ -18,7 +17,7 @@
 
 <Header />
 <main>
-  <Aside menuItems={data.courses} />
+  <Aside courseRecords={data.courses} total={data.total} />
   <slot />
 </main>
 <Footer />

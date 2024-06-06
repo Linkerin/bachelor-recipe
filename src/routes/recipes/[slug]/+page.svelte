@@ -105,7 +105,7 @@
 
   b {
     display: block;
-    margin-block: 0.75rem;
+    margin-block: 0.75rem 1.5rem;
 
     & > :global(.chef-icon) {
       height: 1em;

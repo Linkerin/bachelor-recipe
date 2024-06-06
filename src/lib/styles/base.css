@@ -6,19 +6,8 @@
     --on-primary: hsl(55, 100%, 96%);
     --color-text: hsl(225, 58%, 33%);
     --bg-color: hsl(55, 100%, 96%);
+    --neutral: hsl(225, 20%, 50%);
   }
-
-  /* @media (prefers-color-scheme: light) {
-		html {
-			color-scheme: light;
-		}
-	}
-
-	@media (prefers-color-scheme: dark) {
-		html {
-			color-scheme: dark;
-		}
-	} */
 
   *,
   *::before,
