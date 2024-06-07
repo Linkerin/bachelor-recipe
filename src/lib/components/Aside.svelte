@@ -80,7 +80,7 @@
   }
 
   @media (max-width: 600px) {
-    ul {
+    aside {
       display: none;
     }
   }

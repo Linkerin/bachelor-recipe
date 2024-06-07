@@ -15,7 +15,7 @@ export const load: PageLoad = async ({ params }) => {
       title,
       description: `'${title}' recipe that you can cook in ${time}. See more at The Bachelor Recipe!`,
       twitter: {
-        image: getImgUrl(image, { width: 1024 }),
+        image: getImgUrl(image, { width: 1024, quality: 75 }),
         imageAlt: `Prepared '${title}' dish`
       },
       openGraph: {
