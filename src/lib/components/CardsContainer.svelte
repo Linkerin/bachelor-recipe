@@ -24,7 +24,9 @@
       </a>
       <div class="tags-container">
         {#each recipe.meta.course as course}
-          <Chip text={course} />
+          <a aria-label={`To '${course}' dishes page`} href={`/courses/${course}`}>
+            <Chip text={course} />
+          </a>
         {/each}
       </div>
       <footer class="card-footer">
@@ -71,6 +73,7 @@
       content: '';
       position: absolute;
       inset: 0;
+      z-index: 0;
     }
   }
 
@@ -83,6 +86,15 @@
     display: flex;
     align-items: center;
     gap: 0.25rem;
+
+    & > a {
+      position: relative;
+      z-index: 1;
+    }
+
+    & > a:hover > span {
+      background-color: var(--primary-hover-bg);
+    }
   }
 
   footer {

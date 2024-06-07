@@ -3,6 +3,7 @@
     --primary: hsl(225, 58%, 45%);
     --primary-dark: hsl(225, 58%, 40%);
     --primary-light: hsl(225, 58%, 53%);
+    --primary-hover-bg: hsl(225, 58%, 45%, 0.09);
     --on-primary: hsl(55, 100%, 96%);
     --color-text: hsl(225, 58%, 33%);
     --bg-color: hsl(55, 100%, 96%);

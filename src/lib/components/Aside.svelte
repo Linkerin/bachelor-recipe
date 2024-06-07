@@ -76,7 +76,7 @@
   }
 
   .current {
-    background-color: hsl(225, 58%, 45%, 0.09);
+    background-color: var(--primary-hover-bg, hsl(225, 58%, 45%, 0.09));
   }
 
   @media (max-width: 600px) {
