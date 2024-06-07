@@ -1,3 +1,4 @@
+import { getImgUrl } from '$lib/utils/index.js';
 import type { PageLoad } from './$types.js';
 
 export const load: PageLoad = async ({ params }) => {
@@ -8,8 +9,12 @@ export const load: PageLoad = async ({ params }) => {
     const content = recipe.default;
 
     const pageMeta = {
+      title,
       description: `'${title}' recipe that you can cook in ${time}. See more at The Bachelor Recipe!`,
-      title
+      twitter: {
+        image: getImgUrl(image, { width: 1024 }),
+        imageAlt: `Prepared '${title}' dish`
+      }
     };
 
     return { content, title, date, time, serving, course, image, pageMeta };

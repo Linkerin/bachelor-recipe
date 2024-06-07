@@ -13,7 +13,11 @@
   export let data: LayoutData;
 </script>
 
-<HeadMeta title={$page?.data?.pageMeta?.title} description={$page?.data?.pageMeta?.description} />
+<HeadMeta
+  title={$page?.data?.pageMeta?.title}
+  description={$page?.data?.pageMeta?.description}
+  twitter={$page?.data?.pageMeta?.twitter}
+/>
 
 <Header />
 <main>
