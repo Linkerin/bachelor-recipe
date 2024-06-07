@@ -17,6 +17,7 @@
   title={$page?.data?.pageMeta?.title}
   description={$page?.data?.pageMeta?.description}
   twitter={$page?.data?.pageMeta?.twitter}
+  openGraph={$page?.data?.pageMeta?.openGraph}
 />
 
 <Header />
