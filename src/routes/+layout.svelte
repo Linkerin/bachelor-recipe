@@ -20,17 +20,35 @@
   openGraph={$page?.data?.pageMeta?.openGraph}
 />
 
-<Header />
-<main>
+<div class="container">
+  <Header />
   <Aside courseRecords={data.courses} total={data.total} />
-  <slot />
-</main>
-<Footer />
+  <main>
+    <slot />
+  </main>
+  <Footer />
+</div>
 
 <style>
   @layer base, component;
 
+  .container {
+    display: grid;
+    grid-template-columns: 1fr 5fr;
+    grid-template-rows: auto 1fr auto;
+    grid-template-areas:
+      'header header'
+      'aside main'
+      'footer footer';
+    max-height: 100dvh;
+    max-width: 100dvw;
+    min-height: 100dvh;
+    overflow-y: scroll;
+    position: relative;
+  }
+
   main {
+    grid-area: main;
     display: flex;
     flex-grow: 1;
     flex-shrink: 0;

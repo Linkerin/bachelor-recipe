@@ -26,8 +26,12 @@
 
 <style>
   aside {
+    grid-area: aside;
+    position: sticky;
+    top: var(--header-height);
     box-shadow: -0.75rem 0rem 1.5rem -1.5rem hsl(225, 58%, 45%, 0.6) inset;
-    margin-inline-end: 1rem;
+    max-height: calc(100dvh - var(--header-height));
+    padding: 1rem 1.5rem;
   }
 
   ul {
@@ -35,7 +39,7 @@
     gap: 0;
     margin: 0;
     min-width: 14dvw;
-    padding: 1rem 1.5rem 0 0;
+    padding: 0;
     width: 100%;
   }
 

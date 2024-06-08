@@ -4,11 +4,12 @@
 
 <header>
   <a href="/" aria-label="To The Bachelor Recipe homepage">The Bachelor Recipe</a>
-  <a href="/about" aria-label="To about page"><IconInfoSmall stroke={1.5} size={28} /></a>
+  <a href="/about" aria-label="To about page"><IconInfoSmall stroke={1.25} size={28} /></a>
 </header>
 
 <style>
   header {
+    grid-area: header;
     position: sticky;
     top: 0;
     background-color: var(--bg-color);
@@ -17,7 +18,7 @@
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
-    height: 3rem;
+    height: var(--header-height);
     padding-inline: 1rem;
     width: 100%;
     z-index: 10;
@@ -53,10 +54,6 @@
     a {
       font-size: 1.5rem;
       line-height: 1.75rem;
-    }
-
-    header {
-      height: 3.75rem;
     }
   }
 </style>

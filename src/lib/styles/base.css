@@ -8,6 +8,12 @@
     --color-text: hsl(225, 58%, 33%);
     --bg-color: hsl(55, 100%, 96%);
     --neutral: hsl(225, 20%, 50%);
+
+    --header-height: 3.75rem;
+
+    @media (max-width: 799px) {
+      --header-height: 3rem;
+    }
   }
 
   *,

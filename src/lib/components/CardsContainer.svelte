@@ -41,14 +41,13 @@
 
 <style>
   #cards-container {
-    display: flex;
+    display: grid;
     gap: 1.5rem;
-    align-items: stretch;
+    grid-auto-rows: min-content;
+    grid-template-columns: repeat(auto-fill, min(19rem, 80dvw));
     justify-content: center;
-    flex-wrap: wrap;
-    max-width: 80vw;
-    margin-block: 1rem;
-    margin-inline: auto;
+    margin-block: 1.5rem;
+    width: 100%;
   }
 
   section {
@@ -59,7 +58,7 @@
     gap: 0.25rem;
     border: 2px solid var(--primary);
     padding: 1rem;
-    width: min(19rem, 80vw);
+    width: 100%;
   }
 
   section a {

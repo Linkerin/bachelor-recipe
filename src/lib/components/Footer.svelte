@@ -11,15 +11,17 @@
     Made with <IconHeartFilled /> by
     <a
       href="https://github.com/Linkerin"
-      aria-label="To Linkerin Github profile"
+      aria-label="External link to Linkerin GitHub profile"
       rel="noopener external"
-      target="_blank">Linkerin</a
+      target="_blank"
+      data-sveltekit-preload-data="false">Linkerin</a
     >
   </p>
 </footer>
 
 <style>
   footer {
+    grid-area: footer;
     background-color: var(--primary);
     color: var(--on-primary);
     display: flex;
