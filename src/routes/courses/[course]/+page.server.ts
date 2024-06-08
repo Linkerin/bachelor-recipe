@@ -3,6 +3,7 @@ import type { PageServerLoad } from './$types';
 
 import { capitalize, fetchRecipes } from '$lib/utils';
 import type { PageMeta } from '$lib/types';
+import { PUBLIC_BASE_URL } from '$env/static/public';
 
 export const load: PageServerLoad = async ({ params }) => {
   const course = decodeURIComponent(params.course);
@@ -18,10 +19,9 @@ export const load: PageServerLoad = async ({ params }) => {
 
   const pageMeta: PageMeta = {
     title: capitalize(course),
-    description: `Delicious and easy-to-cook ${course} recipes at The Bachelor Recipe.`
+    description: `Delicious and easy-to-cook ${course} recipes at The Bachelor Recipe.`,
+    openGraph: { url: `${PUBLIC_BASE_URL}/courses/${params.course}` }
   };
 
   return { recipes: sorted, pageMeta };
 };
-
-// export const prerender = 'auto';

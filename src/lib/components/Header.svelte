@@ -1,5 +1,10 @@
+<script lang="ts">
+  import { IconInfoSmall } from '@tabler/icons-svelte';
+</script>
+
 <header>
   <a href="/" aria-label="To The Bachelor Recipe homepage">The Bachelor Recipe</a>
+  <a href="/about" aria-label="To about page"><IconInfoSmall stroke={1.5} size={28} /></a>
 </header>
 
 <style>
@@ -16,6 +21,18 @@
     padding-inline: 1rem;
     width: 100%;
     z-index: 10;
+
+    & > a:last-of-type {
+      color: var(--primary);
+      border: 1px solid var(--primary);
+      border-radius: 0.25rem;
+
+      &:hover {
+        background-color: var(--primary-hover-bg);
+        color: var(--primary-dark);
+        border-color: var(--primary-dark);
+      }
+    }
   }
 
   a {
