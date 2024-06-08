@@ -1,11 +1,21 @@
 <script lang="ts">
+  import { IconList, IconX } from '@tabler/icons-svelte';
+  import type { MouseEventHandler } from 'svelte/elements';
   import { page } from '$app/stores';
 
   export let courseRecords: [string, number][];
   export let total: number;
+
+  let asideNav: HTMLElement;
+  $: isOpenedNav = false;
+
+  const showAsideHandler: MouseEventHandler<HTMLButtonElement> = () => {
+    asideNav.classList.toggle('show');
+    isOpenedNav = !isOpenedNav;
+  };
 </script>
 
-<aside>
+<aside bind:this={asideNav}>
   <nav>
     <ul>
       <li class="all-recipes">
@@ -23,6 +33,17 @@
     </ul>
   </nav>
 </aside>
+<button
+  aria-label="{isOpenedNav ? 'Close' : 'Open'} navigation menu"
+  class="show-nav-btn"
+  on:click|preventDefault={showAsideHandler}
+>
+  {#if isOpenedNav}
+    <IconX size={32} />
+  {:else}
+    <IconList size={32} />
+  {/if}
+</button>
 
 <style>
   aside {
@@ -83,9 +104,45 @@
     background-color: var(--primary-hover-bg, hsl(225, 58%, 45%, 0.09));
   }
 
-  @media (max-width: 600px) {
+  .show-nav-btn {
+    display: none;
+  }
+
+  @media (max-width: 540px) {
     aside {
-      display: none;
+      position: fixed;
+      top: var(--header-height);
+      left: -100dvw;
+      z-index: 8;
+      background-color: var(--bg-color);
+      height: calc(100dvh - var(--header-height));
+      width: 100dvw;
+      transition: 0.4s all ease;
+    }
+
+    .show-nav-btn {
+      position: fixed;
+      bottom: 4rem;
+      right: 0rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      aspect-ratio: 1 / 1;
+      background-color: var(--primary-light);
+      border: none;
+      border-radius: 0.25rem 0 0 0.25rem;
+      color: var(--on-primary);
+      cursor: pointer;
+      padding: 0.5rem;
+      z-index: 9;
+    }
+
+    .show {
+      left: 0;
+    }
+
+    .block-scroll {
+      overflow-y: hidden;
     }
   }
 </style>

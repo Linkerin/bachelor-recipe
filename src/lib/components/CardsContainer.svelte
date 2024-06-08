@@ -12,13 +12,7 @@
   {#each recipes as recipe}
     {@const imgUrl = recipe.meta.image ?? 'default'}
     <section>
-      <img
-        alt={`${recipe.meta.title}`}
-        srcset={`${getImgUrl(imgUrl, { width: 400 })}, ${getImgUrl(imgUrl, {
-          width: 640
-        })} 2x, ${getImgUrl(imgUrl, { width: 1024 })} 3x`}
-        src={getImgUrl(imgUrl)}
-      />
+      <img alt={`${recipe.meta.title}`} src={getImgUrl(imgUrl, { width: 512 })} />
       <a href={`/recipes/${encodeURIComponent(recipe.path)}`}>
         {recipe.meta.title}
       </a>

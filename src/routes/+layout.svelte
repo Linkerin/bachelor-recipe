@@ -56,4 +56,16 @@
     padding-inline: 1.5rem;
     width: 100%;
   }
+
+  @media (max-width: 540px) {
+    .container {
+      display: grid;
+      grid-template-columns: 1fr;
+      grid-template-rows: auto 1fr auto;
+      grid-template-areas:
+        'header'
+        'main'
+        'footer';
+    }
+  }
 </style>
