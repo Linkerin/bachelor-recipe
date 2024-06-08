@@ -20,7 +20,7 @@
   openGraph={$page?.data?.pageMeta?.openGraph}
 />
 
-<div class="container">
+<div id="main-container">
   <Header />
   <Aside courseRecords={data.courses} total={data.total} />
   <main>
@@ -32,7 +32,7 @@
 <style>
   @layer base, component;
 
-  .container {
+  #main-container {
     display: grid;
     grid-template-columns: 1fr 5fr;
     grid-template-rows: auto 1fr auto;
@@ -58,7 +58,7 @@
   }
 
   @media (max-width: 540px) {
-    .container {
+    #main-container {
       display: grid;
       grid-template-columns: 1fr;
       grid-template-rows: auto 1fr auto;

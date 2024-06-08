@@ -1,6 +1,7 @@
 <script lang="ts">
   import { IconList, IconX } from '@tabler/icons-svelte';
   import type { MouseEventHandler } from 'svelte/elements';
+  import { onNavigate } from '$app/navigation';
   import { page } from '$app/stores';
 
   export let courseRecords: [string, number][];
@@ -13,6 +14,12 @@
     asideNav.classList.toggle('show');
     isOpenedNav = !isOpenedNav;
   };
+
+  onNavigate(() => {
+    asideNav?.classList?.remove('show');
+    isOpenedNav = false;
+    document.getElementById('main-container')?.scrollTo(0, 0);
+  });
 </script>
 
 <aside bind:this={asideNav}>
@@ -39,9 +46,9 @@
   on:click|preventDefault={showAsideHandler}
 >
   {#if isOpenedNav}
-    <IconX size={32} />
+    <IconX size={36} />
   {:else}
-    <IconList size={32} />
+    <IconList size={36} />
   {/if}
 </button>
 
@@ -122,7 +129,7 @@
 
     .show-nav-btn {
       position: fixed;
-      bottom: 4rem;
+      bottom: 25dvh;
       right: 0rem;
       display: flex;
       align-items: center;
