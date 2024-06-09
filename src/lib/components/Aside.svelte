@@ -121,13 +121,13 @@
       background-color: var(--bg-color);
       height: calc(100dvh - var(--header-height));
       width: 100dvw;
-      transition: 0.4s all ease;
+      transition: 0.4s left ease;
       box-shadow: -1.25rem 0rem 2.5rem -2.5rem hsl(225, 58%, 45%, 0.6) inset;
     }
 
     .show-nav-btn {
       position: fixed;
-      bottom: 15vh;
+      top: 80dvh;
       right: 0rem;
       display: flex;
       align-items: center;

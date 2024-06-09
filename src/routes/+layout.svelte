@@ -19,7 +19,7 @@
     }
   } else {
     if (typeof document !== 'undefined') {
-      document?.body.style.setProperty('overflow-y', 'auto');
+      document?.body.style.removeProperty('overflow-y');
     }
   }
 </script>
