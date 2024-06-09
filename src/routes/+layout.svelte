@@ -1,7 +1,6 @@
 <script lang="ts">
   import type { LayoutData } from './$types';
   import { page } from '$app/stores';
-  import { afterNavigate } from '$app/navigation';
 
   import Aside from '$lib/components/Aside.svelte';
   import Header from '$lib/components/Header.svelte';
@@ -13,11 +12,16 @@
 
   export let data: LayoutData;
 
-  afterNavigate(() => {
-    if (!$page.url.href.includes('#')) {
-      document.querySelector('#main-container')?.scrollTo(0, 0);
+  // Locks body scroll when aside nav is open on mobile
+  $: if ($page.state.showNav) {
+    if (typeof document !== 'undefined') {
+      document?.body.style.setProperty('overflow-y', 'hidden');
     }
-  });
+  } else {
+    if (typeof document !== 'undefined') {
+      document?.body.style.setProperty('overflow-y', 'auto');
+    }
+  }
 </script>
 
 <HeadMeta
@@ -27,33 +31,15 @@
   openGraph={$page?.data?.pageMeta?.openGraph}
 />
 
-<div id="main-container">
-  <Header />
-  <Aside courseRecords={data.courses} total={data.total} />
-  <main>
-    <slot />
-  </main>
-  <Footer />
-</div>
+<Header />
+<Aside courseRecords={data.courses} total={data.total} />
+<main>
+  <slot />
+</main>
+<Footer />
 
 <style>
   @layer base, component;
-
-  #main-container {
-    display: grid;
-    grid-template-columns: 1fr 5fr;
-    grid-template-rows: auto 1fr auto;
-    grid-template-areas:
-      'header header'
-      'aside main'
-      'footer footer';
-    min-height: 100dvh;
-    max-width: 100dvw;
-    width: 100dvw;
-    overflow-x: hidden;
-    position: relative;
-    height: 100dvh;
-  }
 
   main {
     grid-area: main;
@@ -63,17 +49,5 @@
     justify-content: space-between;
     padding-inline: 1.5rem;
     width: 100%;
-  }
-
-  @media (max-width: 540px) {
-    #main-container {
-      display: grid;
-      grid-template-columns: 1fr;
-      grid-template-rows: auto 1fr auto;
-      grid-template-areas:
-        'header'
-        'main'
-        'footer';
-    }
   }
 </style>

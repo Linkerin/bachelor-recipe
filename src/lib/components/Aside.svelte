@@ -122,22 +122,26 @@
       height: calc(100dvh - var(--header-height));
       width: 100dvw;
       transition: 0.4s all ease;
+      box-shadow: -1.25rem 0rem 2.5rem -2.5rem hsl(225, 58%, 45%, 0.6) inset;
     }
 
     .show-nav-btn {
       position: fixed;
-      bottom: 25dvh;
+      bottom: 15vh;
       right: 0rem;
       display: flex;
       align-items: center;
-      justify-content: center;
-      aspect-ratio: 1 / 1;
+      justify-content: flex-start;
+      aspect-ratio: 1.5 / 1;
       background-color: var(--primary-light);
       border: none;
       border-radius: 0.25rem 0 0 0.25rem;
+      box-shadow: 0 0 3px 1px rgb(0, 0, 0, 0.25);
       color: var(--on-primary);
       cursor: pointer;
-      padding: 0.5rem;
+      height: 3.25rem;
+      padding-inline-start: 0.5rem;
+      width: auto;
       z-index: 9;
     }
 

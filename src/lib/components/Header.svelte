@@ -21,6 +21,7 @@
     height: var(--header-height);
     padding-inline: 1rem;
     width: 100%;
+    user-select: none;
     z-index: 10;
 
     & > a:last-of-type {
