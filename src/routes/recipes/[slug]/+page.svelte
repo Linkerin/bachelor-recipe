@@ -1,4 +1,5 @@
 <script lang="ts">
+  import { fade } from 'svelte/transition';
   import {
     IconAlarm,
     IconChefHat,
@@ -14,7 +15,7 @@
   const courses = data.course.join(', ');
 </script>
 
-<article>
+<article in:fade={{ duration: 400 }}>
   <h1>{data.title}</h1>
   <p class="text-sm">Published: {new Date(data.date).toLocaleDateString()}</p>
   <section>
