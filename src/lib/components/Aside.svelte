@@ -1,28 +1,25 @@
 <script lang="ts">
   import { IconList, IconX } from '@tabler/icons-svelte';
   import type { MouseEventHandler } from 'svelte/elements';
-  import { onNavigate } from '$app/navigation';
   import { page } from '$app/stores';
+  import { pushState } from '$app/navigation';
 
   export let courseRecords: [string, number][];
   export let total: number;
 
   let asideNav: HTMLElement;
-  $: isOpenedNav = false;
+  $: isOpenedNav = $page.state.showNav;
 
   const showAsideHandler: MouseEventHandler<HTMLButtonElement> = () => {
-    asideNav.classList.toggle('show');
-    isOpenedNav = !isOpenedNav;
+    if ($page.state.showNav) {
+      pushState('', { showNav: false });
+    } else {
+      pushState('', { showNav: true });
+    }
   };
-
-  onNavigate(() => {
-    asideNav?.classList?.remove('show');
-    isOpenedNav = false;
-    document.getElementById('main-container')?.scrollTo(0, 0);
-  });
 </script>
 
-<aside bind:this={asideNav}>
+<aside bind:this={asideNav} class={isOpenedNav ? 'show' : undefined}>
   <nav>
     <ul>
       <li class="all-recipes">

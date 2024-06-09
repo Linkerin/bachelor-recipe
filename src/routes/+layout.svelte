@@ -1,6 +1,7 @@
 <script lang="ts">
   import type { LayoutData } from './$types';
   import { page } from '$app/stores';
+  import { afterNavigate } from '$app/navigation';
 
   import Aside from '$lib/components/Aside.svelte';
   import Header from '$lib/components/Header.svelte';
@@ -11,6 +12,12 @@
   import '$lib/styles/components.css';
 
   export let data: LayoutData;
+
+  afterNavigate(() => {
+    if (!$page.url.href.includes('#')) {
+      document.querySelector('#main-container')?.scrollTo(0, 0);
+    }
+  });
 </script>
 
 <HeadMeta
@@ -40,11 +47,12 @@
       'header header'
       'aside main'
       'footer footer';
-    max-height: 100dvh;
-    max-width: 100dvw;
     min-height: 100dvh;
-    overflow-y: scroll;
+    max-width: 100dvw;
+    width: 100dvw;
+    overflow-x: hidden;
     position: relative;
+    height: 100dvh;
   }
 
   main {

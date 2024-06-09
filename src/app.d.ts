@@ -9,7 +9,10 @@ declare global {
       pageMeta?: PageMeta;
     }
     // interface Platform {}
+    interface PageState {
+      showNav?: boolean;
+    }
   }
 }
 
-export { PageData };
+export { PageData, PageState };
