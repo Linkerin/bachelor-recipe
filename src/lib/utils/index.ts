@@ -7,7 +7,12 @@ export function capitalize(str: string) {
   return str.at(0)?.toUpperCase() + str.slice(1);
 }
 
-export async function fetchRecipes(course?: string) {
+interface FetchRecipesParams {
+  course?: string;
+  titles?: string[];
+}
+
+export async function fetchRecipes({ course, titles }: FetchRecipesParams = {}) {
   const allRecipeFiles = import.meta.glob('$recipes/*.md');
 
   const recipes = await Promise.all(
@@ -21,6 +26,10 @@ export async function fetchRecipes(course?: string) {
 
   if (course) {
     return recipes.filter((recipe) => recipe.meta.course.includes(course));
+  }
+
+  if (titles) {
+    return recipes.filter((recipe) => titles.includes(recipe.meta.title));
   }
 
   return recipes;

@@ -7,19 +7,18 @@
   import HeadMeta from '$lib/components/HeadMeta.svelte';
   import Footer from '$lib/components/Footer.svelte';
 
+  import { browser } from '$app/environment';
+
   import '$lib/styles/base.css';
   import '$lib/styles/components.css';
 
   export let data: LayoutData;
 
-  // Locks body scroll when aside nav is open on mobile
-  $: if ($page.state.showNav) {
-    if (typeof document !== 'undefined') {
+  $: if (browser) {
+    if ($page.state.showNav) {
       document?.body.style.setProperty('overflow-y', 'hidden');
-    }
-  } else {
-    if (typeof document !== 'undefined') {
-      document?.body.style.removeProperty('overflow-y');
+    } else {
+      document?.body.removeAttribute('style');
     }
   }
 </script>

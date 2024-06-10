@@ -4,6 +4,8 @@
   import { page } from '$app/stores';
   import { pushState } from '$app/navigation';
 
+  import { favourites } from '$lib/stores';
+
   export let courseRecords: [string, number][];
   export let total: number;
 
@@ -34,6 +36,10 @@
           <span>{record.at(1)}</span>
         </li>
       {/each}
+      <li class={$page.url.pathname.includes('recipes/favourites') ? 'current' : undefined}>
+        <a aria-label="To favourite recipes page" href="/recipes/favourites">Favourites</a>
+        <span>{$favourites.length}</span>
+      </li>
     </ul>
   </nav>
 </aside>
@@ -91,8 +97,13 @@
     }
   }
 
-  li:not(:last-of-type) {
+  li:not(:nth-last-of-type(2)) {
     border-block-end: 1px dotted var(--primary);
+  }
+
+  li:last-of-type {
+    border: none;
+    margin-block-start: 1.75rem;
   }
 
   .all-recipes > a {
@@ -127,7 +138,7 @@
 
     .show-nav-btn {
       position: fixed;
-      top: 80dvh;
+      top: 80vh;
       right: 0rem;
       display: flex;
       align-items: center;

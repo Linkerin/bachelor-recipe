@@ -8,7 +8,7 @@ import { PUBLIC_BASE_URL } from '$env/static/public';
 export const load: PageServerLoad = async ({ params }) => {
   const course = decodeURIComponent(params.course);
 
-  const recipes = await fetchRecipes(course);
+  const recipes = await fetchRecipes({ course });
   if (!recipes) {
     error(404, { message: 'Not Found' });
   }
