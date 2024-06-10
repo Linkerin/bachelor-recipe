@@ -30,6 +30,6 @@ To submit your own recipes check our [about page](https://recipes.snipshot.dev/a
 
 ## License 🪪 <a id="license"></a>
 
-**Limba Vie** is licensed under the MIT License. See the
+**The Bachelor Recipe** is licensed under the MIT License. See the
 [LICENSE](https://github.com/Linkerin/bachelor-recipe/blob/main/LICENSE) file for
 details.
