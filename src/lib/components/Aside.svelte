@@ -138,7 +138,7 @@
 
     .show-nav-btn {
       position: fixed;
-      top: 80vh;
+      bottom: 20vh;
       right: 0rem;
       display: flex;
       align-items: center;
