@@ -4,12 +4,20 @@ import { getImgUrl } from '$lib/utils/index.js';
 import type { PageMeta } from '$lib/types.js';
 import { PUBLIC_BASE_URL } from '$env/static/public';
 
-export const load: PageLoad = async ({ params }) => {
+export const load: PageLoad = async ({ params, fetch }) => {
   const slug = decodeURIComponent(params.slug);
   try {
     const recipe = await import(`$recipes/${slug}.md`);
     const { title, date, time, serving, course, image } = recipe.metadata;
     const content = recipe.default;
+
+    const updatedRes = await fetch(`/api/recipes/last-updated?title=${params.slug}`);
+
+    let lastUpdated: null | string = null;
+    if (updatedRes.ok) {
+      const record = await updatedRes.json();
+      lastUpdated = record.lastUpdated;
+    }
 
     const pageMeta: PageMeta = {
       title,
@@ -24,10 +32,10 @@ export const load: PageLoad = async ({ params }) => {
       }
     };
 
-    return { content, title, date, time, serving, course, image, pageMeta };
+    return { content, title, date, time, serving, course, image, lastUpdated, pageMeta };
   } catch (err) {
     console.log(`Recipe '${slug}' load failed.`, err);
   }
 };
 
-export const prerender = 'auto';
+export const prerender = true;

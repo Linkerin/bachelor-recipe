@@ -16,15 +16,22 @@
 
   export let data: PageData;
 
-  const courses = data.course?.join(', ');
   $: favourite = $favourites?.includes(data.title);
+  const courses = data.course?.join(', ');
+  const publishedStr = new Date(data.date).toLocaleDateString();
+  const updatedStr = data.lastUpdated ? new Date(data.lastUpdated).toLocaleDateString() : '';
 </script>
 
 <article in:fade={{ duration: 400 }}>
   <h1>
     {data.title}{#if favourite} <IconBookmarksFilled />{/if}
   </h1>
-  <p class="text-sm">Published: {new Date(data.date).toLocaleDateString()}</p>
+  <div class="dates-container">
+    <p class="text-sm">Published: <time>{publishedStr}</time></p>
+    {#if updatedStr && publishedStr !== updatedStr}
+      <p class="text-sm">Last updated: <time>{updatedStr}</time></p>
+    {/if}
+  </div>
   <section>
     {#if data.image}
       <div class="img-container">
@@ -33,7 +40,7 @@
           srcset={`${getImgUrl(data.image, { width: 400 })}, ${getImgUrl(data.image, {
             width: 640
           })} 2x, ${getImgUrl(data.image, { width: 1024 })} 3x`}
-          src={getImgUrl(data.image)}
+          src={getImgUrl(data.image, { width: 512 })}
         />
       </div>
     {/if}
@@ -84,6 +91,18 @@
       width: auto;
       vertical-align: -11.5%;
       margin-inline-start: 0.125em;
+    }
+  }
+
+  .dates-container {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    gap: 1rem;
+
+    & time {
+      font-weight: 700;
     }
   }
 
