@@ -11,7 +11,7 @@ export const load: PageLoad = async ({ params, fetch }) => {
     const { title, date, time, serving, course, image } = recipe.metadata;
     const content = recipe.default;
 
-    const updatedRes = await fetch(`/api/recipes/last-updated?title=${params.slug}`);
+    const updatedRes = await fetch(`/api/recipes/last-updated/${params.slug}`);
 
     let lastUpdated: null | string = null;
     if (updatedRes.ok) {

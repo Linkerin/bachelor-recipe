@@ -25,3 +25,5 @@ export const load: PageServerLoad = async ({ params }) => {
 
   return { recipes: sorted, pageMeta };
 };
+
+export const prerender = true;

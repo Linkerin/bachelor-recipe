@@ -3,12 +3,12 @@ import type { RequestHandler } from './$types';
 
 import { GITHUB_API_TOKEN } from '$env/static/private';
 
-export const GET: RequestHandler = async ({ url, isSubRequest }) => {
+export const GET: RequestHandler = async ({ params, isSubRequest }) => {
   if (!isSubRequest) {
     return new Response(null, { status: 403, statusText: 'Forbidden' });
   }
 
-  const recipeTitle = url.searchParams.get('title');
+  const recipeTitle = params.slug;
   if (!recipeTitle) {
     return new Response(null, { status: 400, statusText: 'Bad Request' });
   }
