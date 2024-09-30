@@ -40,3 +40,5 @@ image: scrambled-eggs
    Keep in mind that they cool quickly, so ensure the rest of your breakfast is ready for a delightful meal.
 
 Creamy scrambled eggs pair wonderfully with avocado and a few slices of salted salmon for a delicious and fulfilling breakfast.
+
+If you'd like to experiment with the taste, you can add a tablespoon of soya sauce, a pinch of sweet paprika and a teaspoon of balsamic vinegar to the mixture.
